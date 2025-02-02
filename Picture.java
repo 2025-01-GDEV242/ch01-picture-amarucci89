@@ -1,13 +1,12 @@
 /**
- * This class represents a simple picture. You can draw the picture using
- * the draw method. But wait, there's more: being an electronic picture, it
- * can be changed. You can set it to black-and-white display and back to
- * colors (only after it's been drawn, of course).
+ * This class represents a picture of an astronaut inside of a rocket ship
+ * in space with the sun and the moon in the background.
+ * 
  *
  * This class was written as an early example for teaching Java with BlueJ.
  * 
- * @author  Michael Kšlling and David J. Barnes
- * @version 2016.02.29
+ * @author  Alessandro Marucci
+ * @version 2025.02.02
  */
 public class Picture
 {
@@ -18,6 +17,7 @@ public class Picture
     private Circle moon;
     private Triangle boosterL;
     private Triangle boosterR;
+    private Person astronaut;
     private boolean drawn;
 
     /**
@@ -32,6 +32,7 @@ public class Picture
         moon = new Circle();
         boosterL = new Triangle();
         boosterR = new Triangle();
+        astronaut = new Person();
         drawn = false;
     }
 
@@ -40,25 +41,7 @@ public class Picture
      */
     public void draw()
     {
-        if(!drawn) {
-            fuselage.moveHorizontal(-140);
-            fuselage.moveVertical(20);
-            fuselage.changeSize(120);
-            fuselage.makeVisible();
-            
-            hatch.changeColor("black");
-            hatch.moveHorizontal(-100);
-            hatch.moveVertical(40);
-            hatch.changeSize(50);
-            hatch.makeVisible();
-    
-            
-            nose.changeColor("red");
-            nose.changeSize(60, 115);
-            nose.moveHorizontal(20);
-            nose.moveVertical(-60);
-            nose.makeVisible();
-    
+        if(!drawn) {            
             sun.changeColor("yellow");
             sun.moveHorizontal(100);
             sun.moveVertical(-40);
@@ -70,8 +53,30 @@ public class Picture
             moon.moveVertical(-79);
             moon.makeVisible();
             
+            nose.changeColor("red");
+            nose.changeSize(60, 115);
+            nose.moveHorizontal(20);
+            nose.moveVertical(-100);
+            nose.makeVisible();
+            
+            fuselage.moveHorizontal(-140);
+            fuselage.moveVertical(-20);
+            fuselage.changeSize(120);
+            fuselage.makeVisible();
+            
+            hatch.changeColor("blue");
+            hatch.moveHorizontal(-120);
+            hatch.moveVertical(-10);
+            hatch.changeSize(80);
+            hatch.makeVisible();
+            
+            astronaut.changeColor("green");
+            astronaut.moveHorizontal(-50);
+            astronaut.moveVertical(-50);
+            astronaut.makeVisible();
+            
             boosterL.changeColor("black");
-            boosterL.moveHorizontal(-50);
+            boosterL.moveHorizontal(-40);
             boosterL.moveVertical(80);
             boosterL.makeVisible();
             
@@ -93,6 +98,10 @@ public class Picture
         hatch.changeColor("white");
         nose.changeColor("black");
         sun.changeColor("black");
+        moon.changeColor("black");
+        boosterL.changeColor("black");
+        boosterR.changeColor("black");
+        astronaut.changeColor("black");
     }
 
     /**
@@ -101,8 +110,12 @@ public class Picture
     public void setColor()
     {
         fuselage.changeColor("red");
-        hatch.changeColor("black");
-        nose.changeColor("green");
+        hatch.changeColor("blue");
+        nose.changeColor("red");
         sun.changeColor("yellow");
+        moon.changeColor("magenta");
+        boosterL.changeColor("black");
+        boosterR.changeColor("black");
+        astronaut.changeColor("green");
     }
 }
